@@ -1,0 +1,297 @@
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.direction-col {
+    flex-direction: column;
+}
+
+.j-end {
+    justify-content: end;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.j-between {
+    justify-content: space-between;
+}
+
+.j-around {
+    justify-content: space-around;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.a-end {
+    align-items: end;
+}
+
+.a-start {
+    align-items: start;
+}
+
+.h500 {
+    height: 500px;
+}
+
+.h100 {
+    height: 100px;
+}
+
+.h200 {
+    height: 200px;
+}
+
+.h350 {
+    height: 350px;
+}
+
+.w300 {
+    width: 300px;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+.gap20 {
+    gap: 20px;
+}
+
+.gap30 {
+    gap: 30px;
+}
+
+.flex04 {
+    flex: 0.4;
+}
+
+.flex07 {
+    flex: 0.7;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.flex3 {
+    flex: 3;
+}
+
+.flex4 {
+    flex: 4;
+}
+
+.flex6 {
+    flex: 6;
+}
+
+.order1 {
+    order: 1;
+}
+
+.order2 {
+    order: 2;
+}
+
+.order3 {
+    order: 3;
+}
+
+.order4 {
+    order: 4;
+}
+
+.a-self {
+    align-self: center;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.d-none {
+    display: none;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.col-reverse {
+    flex-direction: column-reverse;
+}
+
+/*     */
+body {
+    width: 1000px;
+    margin: 0 auto;
+    font-family: "Sedan SC", serif;
+}
+
+#gameStartLobby, #gameZone {
+    background-color: rgba(59, 172, 236, 0.49);
+    width: 900px;
+    margin: 0 auto;
+    border-radius: 15px;
+    height: 720px;
+    overflow: hidden;
+}
+
+.characters > div {
+    width: 152px;
+    height: 152px;
+    font-size: 66px;
+    margin: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgba(79, 130, 34, 0.45);
+}
+
+.characters > div:hover {
+    background-color: rgba(79, 130, 34, 0.85);
+}
+
+.active {
+    border: 4px solid rgba(130, 88, 236, 0.79);
+    width: 140px;
+    height: 140px;
+}
+
+button {
+    margin-top: 15px;
+    background-color: rgba(130, 88, 236, 0.79);
+    width: 250px;
+    height: 50px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(130, 88, 236, 0.59);
+}
+
+/* Game zone */
+#hpBorder, #hungerBorder, #funBorder {
+    background-color: rgba(130, 88, 236, 0.59);
+    height: 50px;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+#hpBar, #hungerBar, #funBar {
+    background-color: rgba(130, 88, 236, 0.79);
+    height: 50px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.barTitle {
+    position: relative;
+    top: 20px;
+    left: -40px;
+    z-index: 2;
+}
+
+#lvl {
+    margin: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+}
+
+#animalChillZone {
+    background-image: url("https://t4.ftcdn.net/jpg/01/58/44/31/360_F_158443103_GtLhXiVT4OAGtvjSXEvhiryAOtrdbIEh.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    position: relative;
+}
+
+#myPet {
+    position: relative;
+    left: 400px;
+    top: 320px;
+    animation-name: petAnimation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: 3s;
+}
+
+@keyframes petAnimation {
+    0% {
+        left: 150px;
+        top: 120px;
+    }
+    10% {
+        top: 40px;
+    }
+    20% {
+        top: 120px
+    }
+    30% {
+        top: 40px;
+    }
+    40% {
+        top: 120px;
+    }
+    50% {
+        left: 550px;
+        top: 40px;
+    }
+    60% {
+        top: 120px;
+    }
+    70% {
+        top: 40px;
+    }
+    80% {
+        top: 120px;
+    }
+    90% {
+        top: 40px;
+    }
+    100% {
+        left: 150px;
+        top: 120px;
+    }
+}
+
+.ball img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
