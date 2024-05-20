@@ -247,7 +247,9 @@ button:hover {
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    transition: 3s;
+    z-index: 10;
+    width: 150px;
+    height: 150px;
 }
 
 @keyframes petAnimation {
@@ -293,5 +295,15 @@ button:hover {
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+
+.sprite {
+    background-image: url("https://opengameart.org/sites/default/files/enemies_081719_zp.png");
+    background-size: 580px;
+    background-position: -10px 30px;
+    width: 150px;
+    height: 150px;
+    z-index: 10;
+    position: relative;
 }
 

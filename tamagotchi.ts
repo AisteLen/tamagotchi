@@ -2,7 +2,7 @@
 const gameStartLobby = document.getElementById("gameStartLobby") as HTMLElement;
 const startGameBtn = document.getElementById("startGame") as HTMLElement;
 const animalIcons = document.querySelectorAll(".animal") as NodeListOf<HTMLElement>;
-
+const spriteDiv = document.querySelector(".sprite") as HTMLElement;
 // game zone variables
 const gameZone = document.getElementById("gameZone") as HTMLElement;
 const hpBar = document.getElementById("hpBar") as HTMLElement;
@@ -19,12 +19,42 @@ let hungry: number = 100;
 let fun: number = 100;
 let lvlResult: number = 1;
 lvl.innerText = "Level: " + lvlResult;
+let spriteInterval: number | undefined;
+
 
 animalIcons.forEach(icon => {
     icon.addEventListener('click', () => {
         animalIcons.forEach(icon => icon.classList.remove("active"));
         icon.classList.add("active");
-        myPet.innerHTML = icon.innerHTML;
+
+        if (icon.classList.contains('sprite')) {
+            myPet.innerHTML = '';
+            myPet.className = 'sprite';
+            myPet.style.backgroundImage = icon.style.backgroundImage;
+            myPet.style.backgroundSize = '580px';
+            myPet.style.backgroundPosition = '-10px 30px';
+            myPet.style.display = 'block';
+
+            if (spriteInterval) clearInterval(spriteInterval);
+            let posIndex = 0;
+            const positions = ['-10px 30px', '-195px 30px', '-400px 30px'];
+
+            spriteInterval = window.setInterval(() => {
+                myPet.style.backgroundPosition = positions[posIndex];
+                posIndex = (posIndex + 1) % positions.length;
+            }, 100);
+        } else {
+            if (spriteInterval) {
+                clearInterval(spriteInterval);
+                spriteInterval = undefined;
+            }
+            myPet.className = '';
+            myPet.style.backgroundImage = '';
+            myPet.style.backgroundSize = '';
+            myPet.style.backgroundPosition = '';
+            myPet.style.display = 'block';
+            myPet.innerHTML = icon.innerHTML;
+        }
     });
 });
 
@@ -65,6 +95,9 @@ function goToStart(): void {
     lvlResult = 1;
     lvl.innerText = "Level: " + lvlResult;
     myPet.style.fontSize = "25px";
+    myPet.style.backgroundImage = '';
+    myPet.style.backgroundSize = '';
+    myPet.innerHTML = '';
 }
 
 function levelUp(): void {
